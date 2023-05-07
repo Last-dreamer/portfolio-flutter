@@ -16,9 +16,102 @@ class ExperienceWeb extends StatefulWidget {
 }
 
 class _ExperienceWebState extends State<ExperienceWeb> {
+
+
+  final PageController pageController = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
     List<ExperienceModel> experienceList = [
+
+      ExperienceModel(
+          desig: Strings.expDesig4,
+          compName: Strings.expCompName4,
+          duration: Strings.expDur4,
+          points: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 5.0),
+                      child: Icon(
+                        Icons.arrow_right,
+                        color: AppColors().neonColor,
+                        size: 20,
+                      ),
+                    ),
+                    Container(
+                      width: AppClass().getMqWidth(context) * 0.35,
+                      child: Text(
+                        Strings.expAbout4,
+                        style: TextStyle(
+                            color: AppColors().textLight,
+                            letterSpacing: 1,
+                            height: 1.5,
+                            fontSize: 14,
+                            fontFamily: 'sfmono'),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 5.0),
+                      child: Icon(
+                        Icons.arrow_right,
+                        color: AppColors().neonColor,
+                        size: 20,
+                      ),
+                    ),
+                    Container(
+                      width: AppClass().getMqWidth(context) * 0.35,
+                      child: Text(
+                        Strings.expAbout4_2,
+                        style: TextStyle(
+                            color: AppColors().textLight,
+                            letterSpacing: 1,
+                            height: 1.5,
+                            fontSize: 14,
+                            fontFamily: 'sfmono'),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 5.0),
+                      child: Icon(
+                        Icons.arrow_right,
+                        color: AppColors().neonColor,
+                        size: 20,
+                      ),
+                    ),
+                    Container(
+                      width: AppClass().getMqWidth(context) * 0.35,
+                      child: Text(
+                        Strings.expAbout4_3,
+                        style: TextStyle(
+                            color: AppColors().textLight,
+                            letterSpacing: 1,
+                            height: 1.5,
+                            fontSize: 14,
+                            fontFamily: 'sfmono'),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          )),
       ExperienceModel(
           desig: Strings.expDesig3,
           compName: Strings.expCompName3,
@@ -129,7 +222,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.35,
                       child: Text(
-                        Strings.expAbout2,
+                        Strings.expAbout1,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -156,7 +249,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.35,
                       child: Text(
-                        Strings.expAbout2_2,
+                        Strings.expAbout1_2,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -183,7 +276,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.35,
                       child: Text(
-                        Strings.expAbout2_3,
+                        Strings.expAbout1_3,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -195,8 +288,10 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                   ],
                 ),
               ),
+              
             ],
           )),
+
       ExperienceModel(
           desig: Strings.expDesig1,
           compName: Strings.expCompName1,
@@ -284,8 +379,10 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                   ],
                 ),
               ),
+              
             ],
           )),
+
     ];
 
     return Container(
@@ -339,6 +436,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                         InkWell(
                           onTap: () {
                             ref.read(selectedExpProvider.notifier).state = 0;
+                            pageController.animateTo(0, duration: const Duration(milliseconds: 500), curve: Curves.bounceIn);
                           },
                           child: Container(
                             padding: EdgeInsets.all(10.0),
@@ -353,7 +451,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                                             : Colors.white,
                                         width: 2))),
                             child: Text(
-                              'Netaccess',
+                              'Aqary International',
                               style: TextStyle(
                                   color: data == 0
                                       ? AppColors().neonColor
@@ -368,6 +466,8 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                         InkWell(
                           onTap: () {
                             ref.read(selectedExpProvider.notifier).state = 1;
+                            pageController.animateTo(1, duration: const Duration(milliseconds: 500), curve: Curves.bounceIn);
+
                           },
                           child: Container(
                             padding: EdgeInsets.all(10.0),
@@ -382,7 +482,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                                             : Colors.white,
                                         width: 2))),
                             child: Text(
-                              'Rax-Tech',
+                              'Encoder Bytes',
                               style: TextStyle(
                                   color: data == 1
                                       ? AppColors().neonColor
@@ -397,6 +497,8 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                         InkWell(
                           onTap: () {
                             ref.read(selectedExpProvider.notifier).state = 2;
+                            pageController.animateTo(2, duration: const Duration(milliseconds: 500), curve: Curves.bounceIn);
+
                           },
                           child: Container(
                             padding: EdgeInsets.all(10.0),
@@ -411,9 +513,41 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                                             : Colors.white,
                                         width: 2))),
                             child: Text(
-                              'Techno Kryon',
+                              'Itec Experts',
                               style: TextStyle(
                                   color: data == 2
+                                      ? AppColors().neonColor
+                                      : AppColors().textLight,
+                                  letterSpacing: 1,
+                                  height: 1.5,
+                                  fontSize: 14,
+                                  fontFamily: 'sfmono'),
+                            ),
+                          ),
+                        ),
+
+                        InkWell(
+                          onTap: () {
+                            ref.read(selectedExpProvider.notifier).state = 3;
+                            pageController.animateTo(3, duration: const Duration(milliseconds: 500), curve: Curves.bounceIn);
+
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(10.0),
+                            decoration: BoxDecoration(
+                                color: data == 3
+                                    ? AppColors().cardColor
+                                    : Colors.transparent,
+                                border: Border(
+                                    left: BorderSide(
+                                        color: data == 3
+                                            ? AppColors().neonColor
+                                            : Colors.white,
+                                        width: 2))),
+                            child: Text(
+                              'Ufv TechSol',
+                              style: TextStyle(
+                                  color: data == 3
                                       ? AppColors().neonColor
                                       : AppColors().textLight,
                                   letterSpacing: 1,
@@ -426,41 +560,42 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                       ],
                     ),
                   ),
-                  Expanded(
+                  Flexible(
                     flex: 8,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                              text: experienceList[data].desig,
-                              style: GoogleFonts.roboto(
-                                  color: AppColors().textColor,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 1,
-                                  fontSize: 20),
-                              children: <TextSpan>[
-                                TextSpan(
-                                  text: ' @${experienceList[data].compName}',
-                                  style: GoogleFonts.roboto(
-                                      color: AppColors().neonColor,
-                                      fontSize: 20),
-                                )
-                              ]),
-                        ),
-                        Text(
-                          experienceList[data].duration.toString(),
-                          style: TextStyle(
-                              color: AppColors().textLight,
-                              letterSpacing: 1,
-                              height: 1.5,
-                              fontSize: 14,
-                              fontFamily: 'sfmono'),
-                        ),
-                        experienceList[data].points!
-                      ],
-                    ),
+                    child: Container(
+                      child:  Column( crossAxisAlignment: CrossAxisAlignment.start,
+                         mainAxisAlignment: MainAxisAlignment.start,
+                               children: [
+                                                 RichText(
+                                                   text: TextSpan(
+                                                       text: experienceList[data].desig,
+                                                       style: GoogleFonts.roboto(
+                                                           color: AppColors().textColor,
+                                                           fontWeight: FontWeight.bold,
+                                                           letterSpacing: 1,
+                                                           fontSize: 20),
+                                                       children: <TextSpan>[
+                                                         TextSpan(
+                                                           text: ' @${experienceList[data].compName}',
+                                                           style: GoogleFonts.roboto(
+                                                               color: AppColors().neonColor,
+                                                               fontSize: 20),
+                                                         )
+                                                       ]),
+                                                 ),
+                                                 Text(
+                                                   experienceList[data].duration.toString(),
+                                                   style: TextStyle(
+                                                       color: AppColors().textLight,
+                                                       letterSpacing: 1,
+                                                       height: 1.5,
+                                                       fontSize: 14,
+                                                       fontFamily: 'sfmono'),
+                                                 ),
+                                                 experienceList[data].points!
+                                               ],
+                                             ),
+                    )
                   )
                 ],
               ),

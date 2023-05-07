@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:motion/motion.dart';
 import 'package:portfolio/resource/colors.dart';
 import 'package:portfolio/view/root.dart';
 
  
-void main() {
+void main()async {
+
+  WidgetsFlutterBinding.ensureInitialized(); 
+  await Motion.instance.initialize();
+  Motion.instance.setUpdateInterval(60.fps);
+
   runApp(ProviderScope(child: const AppTheme()));
+
+
 }
 
 class AppTheme extends StatelessWidget {
@@ -15,6 +23,7 @@ class AppTheme extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'PORTFOLIO',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: AppColors().primaryColor,

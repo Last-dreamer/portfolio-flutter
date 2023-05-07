@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/view/root.dart';
@@ -39,10 +42,12 @@ class _IntroWebState extends State<IntroWeb> {
                       fontFamily: 'sfmono'),
                 ),
               ),
-              Padding(
+              Wrap(
+                children: [
+               Padding( 
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
-                  Strings.name,
+                  Strings.firstName,
                   style: GoogleFonts.robotoSlab(
                     color: AppColors().textColor,
                     fontWeight: FontWeight.bold,
@@ -51,15 +56,18 @@ class _IntroWebState extends State<IntroWeb> {
                   ),
                 ),
               ),
-              Container(
-                width: AppClass().getMqWidth(context) -
-                    (AppClass().getMqWidth(context) * 0.23),
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 5.0),
+
+              InkWell(
+                  onHover: togglePointerSize,
+                onTap: (){
+                     togglePointerSize(true);
+                },
+                child: Padding(   
+                  padding: const EdgeInsets.only(top: 8.0),
                   child: Text(
-                    Strings.whatIdo,
+                    Strings.lastName,
                     style: GoogleFonts.robotoSlab(
-                      color: AppColors().textLight,
+                      color: AppColors().textColor,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 3,
                       fontSize: 55,
@@ -67,6 +75,69 @@ class _IntroWebState extends State<IntroWeb> {
                   ),
                 ),
               ),
+              
+                ],
+              ),
+
+              Container(
+                height: AppClass().getMqHeight(context) * .1,
+                    width: AppClass().getMqWidth(context) -
+                    (AppClass().getMqWidth(context) * 0.23),
+                    padding: EdgeInsets.only(top: 5),
+                child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                 
+                    Text(
+                    Strings.whatIdo0,
+                    style: GoogleFonts.robotoSlab(
+                    color: AppColors().textLight,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 3,
+                    fontSize: 55,
+                    ),
+                  ),
+                
+                  DefaultTextStyle(
+                   style: GoogleFonts.robotoSlab(
+                      color: AppColors().textLight,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 3,
+                      fontSize: 55,
+                    ),
+                    child: AnimatedTextKit(
+                      repeatForever: true,
+                      animatedTexts: [
+                        RotateAnimatedText(Strings.whatIdo1),
+                        RotateAnimatedText(Strings.whatIdo2),
+                        RotateAnimatedText(Strings.whatIdo3),
+                        RotateAnimatedText(Strings.whatIdo4),
+                        RotateAnimatedText(Strings.whatIdo5)
+                      ],
+                      onTap: () {
+                        
+                      },
+                    ),
+                  ),
+                ],
+              ),
+              ),
+              // Container(
+              //   width: AppClass().getMqWidth(context) -
+              //       (AppClass().getMqWidth(context) * 0.23),
+              //   child: Padding(
+              //     padding: const EdgeInsets.only(top: 5.0),
+              //     child: Text(
+              //       Strings.whatIdo,
+              //       style: GoogleFonts.robotoSlab(
+              //         color: AppColors().textLight,
+              //         fontWeight: FontWeight.bold,
+              //         letterSpacing: 3,
+              //         fontSize: 55,
+              //       ),
+              //     ),
+              //   ),
+              // ),
               Padding(
                 padding: const EdgeInsets.only(top: 30.0),
                 child: Container(
@@ -96,8 +167,9 @@ class _IntroWebState extends State<IntroWeb> {
               Padding(
                 padding: EdgeInsets.only(top: 50, bottom: 70),
                 child: InkWell(
+                  onHover: togglePointerSize,
                   onTap: () {
-                    widget.aScrollController.scrollToIndex(1,
+                    widget.aScrollController.scrollToIndex(2,
                         preferPosition: AutoScrollPosition.begin);
                   },
                   child: Container(

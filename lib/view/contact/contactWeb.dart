@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/resource/appClass.dart';
+import 'package:portfolio/view/root.dart';
 
 import '../../controller/generalController.dart';
 import '../../resource/colors.dart';
@@ -18,7 +19,7 @@ class _ContactWebState extends ConsumerState<ContactWeb> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: AppClass().getMqHeight(context) - 70,
+      height: AppClass().getMqHeight(context) - 100,
       padding: EdgeInsets.only(top: 30),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -73,8 +74,11 @@ class _ContactWebState extends ConsumerState<ContactWeb> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 50, bottom: 70),
+                padding: EdgeInsets.only(top: 50, bottom: 10),
                 child: InkWell(
+                  onHover: (v){
+                    togglePointerSize(v);
+                  },
                   onTap: () {
                     showMessageDialog(context);
                   },
@@ -103,22 +107,26 @@ class _ContactWebState extends ConsumerState<ContactWeb> {
           Column(
             children: [
               Text(
-                '''Built & Developed by Jeevanandham''',
+                '''Built & Developed by Muhammad Asim''',
                 style: TextStyle(
                     color: AppColors().textColor,
                     fontSize: 12,
                     fontFamily: 'sfmono'),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  '''ref - Britney C''',
-                  style: TextStyle(
-                      color: AppColors().neonColor,
-                      fontSize: 12,
-                      fontFamily: 'sfmono'),
-                ),
+
+              Container(
+                padding: EdgeInsets.all(8.0),
               ),
+              // Padding(
+              //   padding: const EdgeInsets.all(8.0),
+              //   child: Text(
+              //     '''ref - Britney C''',
+              //     style: TextStyle(
+              //         color: AppColors().neonColor,
+              //         fontSize: 12,
+              //         fontFamily: 'sfmono'),
+              //   ),
+              // ),
             ],
           )
         ],

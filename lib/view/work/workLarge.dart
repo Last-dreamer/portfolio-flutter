@@ -5,6 +5,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/controller/generalController.dart';
 import 'package:portfolio/resource/appClass.dart';
+import 'package:portfolio/view/widget/image_hover.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/colors.dart';
 
@@ -58,7 +60,10 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
               StaggeredGridTile.count(
                 crossAxisCellCount: 1,
                 mainAxisCellCount: 1,
-                child: getTile(index: 0),
+                child: getTile(index: 0)
+                // child: Padding(
+                //   padding: EdgeInsets.all(8.0),
+                //   child: HoverImage(image: "https://user-images.githubusercontent.com/29290992/236647228-b5f9847c-61b9-4e80-8aae-f7a95e2a1662.png")),
               ),
               StaggeredGridTile.count(
                 crossAxisCellCount: 1,
@@ -97,22 +102,28 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
       onTap: () async {
         switch (index) {
           case 0:
-            //await launchUrl(Uri.parse(AppClass.gitSafeC19));
+            await launchUrl(Uri.parse("https://play.google.com/store/apps/details?id=com.noman.quickSwapper"));
             break;
 
           case 1:
-            //AppClass().alertDialog(context, 'Not Found', 'Sorry the project you requested not found in the repository');
+          await launchUrl(Uri.parse(" https://play.google.com/store/apps/details?id=com.sherikhan5577.biznes"));
+         
+          
             break;
 
           case 2:
-            //await launchUrl(Uri.parse(AppClass.gitWtIot));
+          await launchUrl(Uri.parse("https://play.google.com/store/apps/details?id=com.launchArtmedia.lauch_art_media"));
             break;
 
           case 3:
+          await launchUrl(Uri.parse("https://play.google.com/store/apps/details?id=com.pharmapedia.pharmapediapro"));
+
             //await launchUrl(Uri.parse(AppClass.gitAutoStabilizer));
             break;
 
           case 4:
+          await launchUrl(Uri.parse("https://play.google.com/store/apps/details?id=com.firstaid.wardguide"));
+
             //await launchUrl(Uri.parse(AppClass.gitPAT));
             break;
 
@@ -131,10 +142,13 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
       child: Consumer(builder: (context, ref, child) {
         String data = ref.watch(hoverProvider);
         bool isHovered = (data == "$index");
-        return Container(
+        return AnimatedContainer(
+          duration: const Duration(milliseconds: 700),
+          curve: Curves.easeIn,
           margin: EdgeInsets.all(isHovered ? 8.0 : 0.0),
           child: Tooltip(
-            message: AppClass().projectList[index].projectTitle.toString() + "\n\n" + AppClass().projectList[index].projectContent.toString(),
+            message: "Project",
+            // message: AppClass().projectList[index].projectTitle.toString() + "\n\n" + AppClass().projectList[index].projectContent.toString(),
             padding: EdgeInsets.all(20),
             margin: EdgeInsets.all(AppClass().getMqWidth(context) * 0.1),
             waitDuration: Duration(seconds: 3),
@@ -156,18 +170,18 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SvgPicture.asset(
-                          'assets/svg/folder.svg',
-                          width: 45,
-                          height: 45,
-                          color: AppColors().neonColor,
-                        ),
-                        SvgPicture.asset(
-                          'assets/svg/externalLink.svg',
-                          width: 22,
-                          height: 22,
-                          color: isHovered ? AppColors().neonColor : Colors.white,
-                        ),
+                        // SvgPicture.asset(
+                        //   'assets/svg/folder.svg',
+                        //   width: 45,
+                        //   height: 45,
+                        //   color: AppColors().neonColor,
+                        // ),
+                        // SvgPicture.asset(
+                        //   'assets/svg/externalLink.svg',
+                        //   width: 22,
+                        //   height: 22,
+                        //   color: isHovered ? AppColors().neonColor : Colors.white,
+                        // ),
                       ],
                     ),
                     Padding(
@@ -189,18 +203,11 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                       ),
                     ),
                     Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                        child: Text(
-                          AppClass().projectList[index].projectContent.toString(),
-                          style: GoogleFonts.roboto(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ),
+
+                      child: HoverImage(image: AppClass().projectList[index].projectContent.toString()),
+
+                     
+                     
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -96,78 +95,83 @@ class _RootScreenState extends ConsumerState<RootScreen> with SingleTickerProvid
                               scrType == ScreenType.mobile ? SizedBox() : LeftPane(),
                               Expanded(
                                   flex: 8,
-                                  child: ListView(
-                                    controller: mScrollController,
-                                    children: [
-                                      
-                                      VisibilityDetector(
-                                          key: ValueKey(0),
-                                        onVisibilityChanged: (VisibilityInfo info) {
-                                          if(info.visibleFraction > 0){
-                                            ref.read(currentMenuIndexProvider.notifier).state = -1;
-                                          } 
-                                        },
-                                        child: AutoScrollTag(
+                                  child: ScrollbarTheme(
+                                    data: ScrollbarThemeData(
+                                      thumbColor: MaterialStateProperty.all(AppColors().neonColor)
+                                    ),
+                                    child: ListView(
+                                      controller: mScrollController,
+                                      children: [
+                                        
+                                        VisibilityDetector(
                                             key: ValueKey(0),
-                                            controller: mScrollController,
-                                            index: 0,
-                                            child: IntroContent(mScrollController)),
-                                      ),
-                                      VisibilityDetector(
-                                         key: ValueKey(1),
-                                        onVisibilityChanged: (VisibilityInfo info) {
-                                          if(info.visibleFraction > 0){
-                                            
-                                            ref.read(currentMenuIndexProvider.notifier).state = 0;
-                                          } 
-                                        },
-                                        child: AutoScrollTag(
-                                            key: ValueKey(1),
-                                            controller: mScrollController,
-                                            index: 1,
-                                            child: About()),
-                                      ),
-                                      VisibilityDetector(
-                                          key: ValueKey(2),
-                                        onVisibilityChanged: (VisibilityInfo info) {
-                                          if(info.visibleFraction > 0){
-                                            ref.read(currentMenuIndexProvider.notifier).state = 1;
-                                          } 
-                                        },
-                                        child: AutoScrollTag(
+                                          onVisibilityChanged: (VisibilityInfo info) {
+                                            if(info.visibleFraction > 0){
+                                              ref.read(currentMenuIndexProvider.notifier).state = -1;
+                                            } 
+                                          },
+                                          child: AutoScrollTag(
+                                              key: ValueKey(0),
+                                              controller: mScrollController,
+                                              index: 0,
+                                              child: IntroContent(mScrollController)),
+                                        ),
+                                        VisibilityDetector(
+                                           key: ValueKey(1),
+                                          onVisibilityChanged: (VisibilityInfo info) {
+                                            if(info.visibleFraction > 0){
+                                              
+                                              ref.read(currentMenuIndexProvider.notifier).state = 0;
+                                            } 
+                                          },
+                                          child: AutoScrollTag(
+                                              key: ValueKey(1),
+                                              controller: mScrollController,
+                                              index: 1,
+                                              child: About()),
+                                        ),
+                                        VisibilityDetector(
                                             key: ValueKey(2),
-                                            controller: mScrollController,
-                                            index: 2,
-                                            child: Experience()),
-                                      ),
-                                      VisibilityDetector(
-                                          key: ValueKey(3),
-                                        onVisibilityChanged: (VisibilityInfo info) {
-                                          if(info.visibleFraction > 0){
-                                            ref.read(currentMenuIndexProvider.notifier).state = 2;
-                                          } 
-                                        },
-                                        child: AutoScrollTag(
+                                          onVisibilityChanged: (VisibilityInfo info) {
+                                            if(info.visibleFraction > 0){
+                                              ref.read(currentMenuIndexProvider.notifier).state = 1;
+                                            } 
+                                          },
+                                          child: AutoScrollTag(
+                                              key: ValueKey(2),
+                                              controller: mScrollController,
+                                              index: 2,
+                                              child: Experience()),
+                                        ),
+                                        VisibilityDetector(
                                             key: ValueKey(3),
-                                            controller: mScrollController,
-                                            index: 3,
-                                            child: Work()),
-                                      ),
-                                      VisibilityDetector(
-                                          key: ValueKey(4),
-                                        onVisibilityChanged: (VisibilityInfo info) {
-                                          if(info.visibleFraction > 0){
-                                            
-                                            ref.read(currentMenuIndexProvider.notifier).state = 3;
-                                          } 
-                                        },
-                                        child: AutoScrollTag(
+                                          onVisibilityChanged: (VisibilityInfo info) {
+                                            if(info.visibleFraction > 0){
+                                              ref.read(currentMenuIndexProvider.notifier).state = 2;
+                                            } 
+                                          },
+                                          child: AutoScrollTag(
+                                              key: ValueKey(3),
+                                              controller: mScrollController,
+                                              index: 3,
+                                              child: Work()),
+                                        ),
+                                        VisibilityDetector(
                                             key: ValueKey(4),
-                                            controller: mScrollController,
-                                            index: 4,
-                                            child: Contact()),
-                                      )
-                                    ],
+                                          onVisibilityChanged: (VisibilityInfo info) {
+                                            if(info.visibleFraction > 0){
+                                              
+                                              ref.read(currentMenuIndexProvider.notifier).state = 3;
+                                            } 
+                                          },
+                                          child: AutoScrollTag(
+                                              key: ValueKey(4),
+                                              controller: mScrollController,
+                                              index: 4,
+                                              child: Contact()),
+                                        )
+                                      ],
+                                    ),
                                   )),
                               scrType == ScreenType.mobile ? SizedBox() : RightPane(),
                             ],
@@ -183,7 +187,7 @@ class _RootScreenState extends ConsumerState<RootScreen> with SingleTickerProvid
                   builder: (context, snapshot) {
                     return AnimatedPointer(
                       pointerOffset: pointerOffset,
-                      radius: 45 + 100 * pointerAnimation.value,
+                      radius: 45 + 45 * pointerAnimation.value,
                     );
                   }),
               AnimatedPointer(

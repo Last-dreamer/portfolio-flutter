@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:motion/motion.dart';
 import '../../controller/generalController.dart';
 import '../../resource/appClass.dart';
 import '../../resource/colors.dart';
@@ -16,6 +15,9 @@ class AboutWeb extends ConsumerStatefulWidget {
 }
 
 class _AboutWebState extends ConsumerState<AboutWeb> {
+
+ 
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -204,23 +206,27 @@ class _AboutWebState extends ConsumerState<AboutWeb> {
                                   ref.read(hoverProvider.notifier).state = "";
                                 }
                               },
-                              child: Container(
-                                width: AppClass().getMqWidth(context) * 0.22,
-                                height: AppClass().getMqWidth(context) * 0.22,
-                                decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(5.0)),
-                                    image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        colorFilter: ColorFilter.mode(
-                                            AppColors().primaryColor,
-                                            isHovered
-                                                ? BlendMode.lighten
-                                                : BlendMode.color),
-                                        image: AssetImage(
-                                            'assets/svg/profilePic.jpg')),
-                                    color: Colors.transparent),
-                              ),
+                              child:
+                               Motion(
+                                
+                                 child: Container(
+                                      width: AppClass().getMqWidth(context) * 0.22,
+                                      height: AppClass().getMqWidth(context) * 0.22,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.all(Radius.circular(5.0)),
+                                          image: DecorationImage(
+                                              fit: BoxFit.cover,
+                                              colorFilter: ColorFilter.mode(
+                                                  AppColors().primaryColor,
+                                                  isHovered
+                                                      ? BlendMode.lighten
+                                                      : BlendMode.color),
+                                              image: AssetImage(
+                                                  'assets/svg/profilePic2.png')),
+                                          color: Colors.transparent),
+                                    ),
+                               ),
                             ),
                           ],
                         );
