@@ -107,13 +107,6 @@ class AppClass {
   }
 
    sendEmail(name, contact, msg) async {
-    // var url = Uri.https('hbk-portfolio-mailer.web.app', '/sendMail');
-    // var response = await post(url, body: {
-    //   "name": name,
-    //   "contactInfo": contact,
-    //   "message": msg
-    // }).timeout(Duration(seconds: 10));
-    // print(response.body);
-    // return response.statusCode == 200;
+    
   }
 }
