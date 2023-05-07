@@ -120,7 +120,7 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  '''ref - Britney C''',
+                  ''' Lost Dreamer.''',
                   style: TextStyle(
                       color: AppColors().neonColor,
                       fontSize: 12,

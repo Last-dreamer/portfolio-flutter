@@ -112,7 +112,7 @@ class _ContactTabState extends ConsumerState<ContactTab> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  '''ref - Britney C''',
+                  '''Lost-dreamer.''',
                   style: TextStyle(
                       color: AppColors().neonColor,
                       fontSize: 12,
