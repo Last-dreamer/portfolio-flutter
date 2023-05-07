@@ -122,6 +122,7 @@ class _IntroWebState extends State<IntroWeb> {
                 ],
               ),
               ),
+             
               // Container(
               //   width: AppClass().getMqWidth(context) -
               //       (AppClass().getMqWidth(context) * 0.23),

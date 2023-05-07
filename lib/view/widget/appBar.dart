@@ -39,12 +39,17 @@ void initState() {
             return Row(
               children: [
                 Expanded(
-                    child: Padding(
+                  flex: 2,
+                    child: Container(
+                      // color: Colors.red,
+                     
                   padding: const EdgeInsets.only(left: 20.0),
                   child: Image.asset(
                     'assets/svg/logo1.png',
-                    width: AppClass().getMqWidth(context) * 0.5,
-                    height: AppClass().getMqHeight(context) * 0.5,
+                    width: AppClass().getMqWidth(context) * 1.5,
+                    height: AppClass().getMqHeight(context) * 0.9,
+                    fit: BoxFit.cover,
+
                   ),
                 )),
                 Expanded(
@@ -144,8 +149,8 @@ void initState() {
           return Row(
             children: [
               Expanded(child: Container(
-                  width: AppClass().getMqWidth(context) * 0.07,
-                  height: AppClass().getMqHeight(context) * 0.07,
+                  width: AppClass().getMqWidth(context) * 0.09,
+                  height: AppClass().getMqHeight(context) * 0.09,
                   child: Image.asset('assets/svg/logo1.png',))),
               Expanded(
                 flex: 9,

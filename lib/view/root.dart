@@ -209,6 +209,8 @@ class _RootScreenState extends ConsumerState<RootScreen> with SingleTickerProvid
 
 
  void togglePointerSize(bool hovering) async {
+
+ 
     if (hovering) {
       pointerSizeController.forward();
     } else

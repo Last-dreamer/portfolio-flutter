@@ -451,7 +451,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                                             : Colors.white,
                                         width: 2))),
                             child: Text(
-                              'Aqary International',
+                              Strings.expTabName1,
                               style: TextStyle(
                                   color: data == 0
                                       ? AppColors().neonColor
@@ -482,7 +482,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                                             : Colors.white,
                                         width: 2))),
                             child: Text(
-                              'Encoder Bytes',
+                                                           Strings.expTabName2,
                               style: TextStyle(
                                   color: data == 1
                                       ? AppColors().neonColor
@@ -513,7 +513,8 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                                             : Colors.white,
                                         width: 2))),
                             child: Text(
-                              'Itec Experts',
+                                                           Strings.expTabName3,
+
                               style: TextStyle(
                                   color: data == 2
                                       ? AppColors().neonColor
@@ -545,7 +546,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                                             : Colors.white,
                                         width: 2))),
                             child: Text(
-                              'Ufv TechSol',
+                           Strings.expTabName4,
                               style: TextStyle(
                                   color: data == 3
                                       ? AppColors().neonColor

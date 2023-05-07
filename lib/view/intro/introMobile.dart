@@ -1,5 +1,9 @@
+import 'dart:developer';
+
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/view/root.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../resource/appClass.dart';
@@ -38,8 +42,30 @@ class _IntroMobileState extends State<IntroMobile> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 10.0),
+                child: Row(
+                  children: [
+                    Text(
+                      Strings.firstName,
+                      style: GoogleFonts.robotoSlab(
+                        color: AppColors().textColor,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 3,
+                        fontSize: 25,
+                      ),
+                    ),
+                     InkWell(
+                      onTap: ()
+                      {
+                        
+                       if( pointerSizeController.status == AnimationStatus.completed){
+
+                        togglePointerSize(false);
+                       }else{
+ togglePointerSize(true);
+                       }},
+                
                 child: Text(
-                  Strings.name,
+                  Strings.lastName,
                   style: GoogleFonts.robotoSlab(
                     color: AppColors().textColor,
                     fontWeight: FontWeight.bold,
@@ -48,20 +74,67 @@ class _IntroMobileState extends State<IntroMobile> {
                   ),
                 ),
               ),
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 5.0),
-                  child: Text(
-                    Strings.whatIdo,
+                  ],
+                ),
+              ),
+             
+                Container(
+                height: AppClass().getMqHeight(context) * .1,
+                    width: AppClass().getMqWidth(context),
+                    padding: EdgeInsets.only(top: 5),
+                child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                 
+                    Text(
+                    Strings.whatIdo0,
                     style: GoogleFonts.robotoSlab(
+                    color: AppColors().textLight,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 3,
+                    fontSize: 20,
+                    ),
+                  ),
+                
+                  DefaultTextStyle(
+                   style: GoogleFonts.robotoSlab(
                       color: AppColors().textLight,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 3,
-                      fontSize: 24,
+                      fontSize: 20,
+                    ),
+                    child: AnimatedTextKit(
+                      repeatForever: true,
+                      animatedTexts: [
+                        RotateAnimatedText(Strings.whatIdo1),
+                        RotateAnimatedText(Strings.whatIdo2),
+                        RotateAnimatedText(Strings.whatIdo3),
+                        RotateAnimatedText(Strings.whatIdo4),
+                        RotateAnimatedText(Strings.whatIdo5)
+                      ],
+                      onTap: () {
+                        
+                      },
                     ),
                   ),
-                ),
+                ],
               ),
+              ),
+            
+              // Container(
+              //   child: Padding(
+              //     padding: const EdgeInsets.only(top: 5.0),
+              //     child: Text(
+              //       Strings.whatIdo,
+              //       style: GoogleFonts.robotoSlab(
+              //         color: AppColors().textLight,
+              //         fontWeight: FontWeight.bold,
+              //         letterSpacing: 3,
+              //         fontSize: 24,
+              //       ),
+              //     ),
+              //   ),
+              // ),
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
                 child: Container(

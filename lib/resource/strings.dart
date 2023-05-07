@@ -38,6 +38,7 @@ class Strings {
   static final tech4 = ''' Node.js'''; // space for manual padding
 
   /* Exp screen contents */
+  static final expTabName1 = '''Aqary International''';
   static final expCompName1 = '''Ufv TechSol''';
   static final expDesig1 = '''Android Developer''';
   static final expDur1 = '''Nov 2019 - Mar 2020''';
@@ -48,6 +49,8 @@ class Strings {
   static final expAbout1_3 =
   '''Has worked on several live projects on different platforms such as e-commerce, ERP, CMS Applications.''';
 
+
+  static final expTabName2 = '''Encoder Bytes''';
   static final expCompName2 = ''' Itec Experts''';
   static final expDesig2 = '''Lead Developer''';
   static final expDur2 = '''28th Jun 2021 - 1st Dec 2023''';
@@ -58,6 +61,7 @@ class Strings {
   static final expAbout2_3 =
       '''Experienced many technologies such as Flutter(IOS & Android), Node.js, React.js.''';
 
+  static final expTabName3= '''Itec Experts''';
   static final expCompName3 = ''' Encoder Bytes''';
   static final expDesig3 = '''Lead Mobile App Developer''';
   static final expDur3 = '''Oct 2022 - Dec 2022''';
@@ -68,7 +72,7 @@ class Strings {
   static final expAbout3_3 =
   '''Created and  delivered modern Android & IOS app using latest technologies.''';
 
-
+  static final expTabName4= '''Ufv TechSol''';
   static final expCompName4 = '''Aqary International''';
   static final expDesig4 = '''Lead Full Stack Developer''';
   static final expDur4 = '''16 Jan 2023 - Present''';
