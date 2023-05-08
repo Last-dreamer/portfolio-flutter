@@ -111,7 +111,7 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
           Column(
             children: [
               Text(
-                '''Built & Developed by Jeevanandham''',
+                '''Built & Developed by Muhammad Asim''',
                 style: TextStyle(
                     color: AppColors().textColor,
                     fontSize: 12,
