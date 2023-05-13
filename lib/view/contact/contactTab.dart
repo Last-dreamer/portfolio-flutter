@@ -103,7 +103,7 @@ class _ContactTabState extends ConsumerState<ContactTab> {
           Column(
             children: [
               Text(
-                '''Built & Developed by Jeevanandham''',
+                '''Built & Developed by Muhammad Asim''',
                 style: TextStyle(
                     color: AppColors().textColor,
                     fontSize: 12,

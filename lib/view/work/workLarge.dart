@@ -52,7 +52,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
         ),
         Container(
           padding: EdgeInsets.only(top: 30.0, bottom: 70.0),
-          child: StaggeredGrid.count(
+          child:  StaggeredGrid.count(
             crossAxisCount: 3,
             mainAxisSpacing: 4,
             crossAxisSpacing: 4,
