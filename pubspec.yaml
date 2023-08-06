@@ -21,6 +21,7 @@ dependencies:
   visibility_detector: ^0.4.0+2
   animated_text_kit: ^4.2.2
   motion: ^1.4.0
+  url_strategy: ^0.2.0
 
 dev_dependencies:
   flutter_test:
