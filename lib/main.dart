@@ -28,7 +28,7 @@ class AppTheme extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'PORTFOLIO',
+      title: 'LOST DREAMER PORTFOLIO ',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
