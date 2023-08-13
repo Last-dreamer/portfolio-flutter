@@ -1,8 +1,9 @@
-import 'dart:developer';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/controller/generalController.dart';
 import 'package:portfolio/view/root.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
@@ -57,23 +58,34 @@ class _IntroWebState extends State<IntroWeb> {
                 ),
               ),
 
-              InkWell(
-                  onHover: togglePointerSize,
-                onTap: (){
-                     togglePointerSize(true);
-                },
-                child: Padding(   
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: Text(
-                    Strings.lastName,
-                    style: GoogleFonts.robotoSlab(
-                      color: AppColors().textColor,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 3,
-                      fontSize: 55,
+              Consumer(
+                builder: (BuildContext context, WidgetRef ref, Widget? child) {
+
+                  return InkWell(
+                    onHover: (hover){
+                      togglePointerSize(hover);
+
+                      ref.read(introName.notifier).state = hover;
+                    },
+                    
+                  onTap: (){
+                       togglePointerSize(true);
+                  },
+                  child: Padding(   
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: Text(
+                     ref.watch(introName.notifier).state == true ? Strings.lastName2  : Strings.lastName,
+                      style: GoogleFonts.robotoSlab(
+                        color: AppColors().textColor,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 3,
+                        fontSize: 55,
+                      ),
                     ),
                   ),
-                ),
+                 );  
+                  },
+                 
               ),
               
                 ],
@@ -199,4 +211,6 @@ class _IntroWebState extends State<IntroWeb> {
       ),
     );
   }
+
+ 
 }

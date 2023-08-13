@@ -9,3 +9,5 @@ var selectedExpProvider = StateProvider<int>((ref) => 0);
 var progressProvider = StateProvider<bool>((ref) => false);
 
 var currentMenuIndexProvider = StateProvider<int>((ref) => -1);
+
+var introName = StateProvider<bool>((ref) => false);

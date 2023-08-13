@@ -42,15 +42,18 @@ class _IntroTabState extends State<IntroTab> {
                       fontFamily: 'sfmono'),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 8.0),
-                child: Text(
-                  Strings.name,
-                  style: GoogleFonts.robotoSlab(
-                    color: AppColors().textColor,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 3,
-                    fontSize: 45,
+            MouseRegion(
+         
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Text(
+                    Strings.name,
+                    style: GoogleFonts.robotoSlab(
+                      color: AppColors().textColor,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 3,
+                      fontSize: 45,
+                    ),
                   ),
                 ),
               ),

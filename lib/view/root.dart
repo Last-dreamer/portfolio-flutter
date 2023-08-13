@@ -187,7 +187,7 @@ class _RootScreenState extends ConsumerState<RootScreen> with SingleTickerProvid
                   builder: (context, snapshot) {
                     return AnimatedPointer(
                       pointerOffset: pointerOffset,
-                      radius: 45 + 45 * pointerAnimation.value,
+                      radius: 50 + 50 * pointerAnimation.value,
                     );
                   }),
               AnimatedPointer(
@@ -209,7 +209,6 @@ class _RootScreenState extends ConsumerState<RootScreen> with SingleTickerProvid
 
 
  void togglePointerSize(bool hovering) async {
-
  
     if (hovering) {
       pointerSizeController.forward();

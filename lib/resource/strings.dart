@@ -4,6 +4,7 @@ class Strings {
   static final name = '''Muhammad Asim.'''; // add . at the end
   static final firstName = '''Muhammad'''; 
   static final lastName = ''' Asim.'''; // add . at the end
+  static final lastName2 = ''' Dreamer.'''; 
   // add . at the end
   static final whatIdo =
       '''I build App's for the Mobile/Web.''';
