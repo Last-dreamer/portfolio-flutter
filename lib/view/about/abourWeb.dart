@@ -211,7 +211,7 @@ class _AboutWebState extends ConsumerState<AboutWeb> {
                                 
                                  child: Container(
                                       width: AppClass().getMqWidth(context) * 0.22,
-                                      height: AppClass().getMqWidth(context) * 0.22,
+                                      height: AppClass().getMqWidth(context) * 0.28,
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.all(Radius.circular(5.0)),
@@ -223,7 +223,7 @@ class _AboutWebState extends ConsumerState<AboutWeb> {
                                                       ? BlendMode.lighten
                                                       : BlendMode.color),
                                               image: AssetImage(
-                                                  'assets/svg/profilePic2.png')),
+                                                  'assets/svg/profilePic2.png',)),
                                           color: Colors.transparent),
                                     ),
                                ),
