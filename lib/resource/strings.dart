@@ -80,7 +80,7 @@ class Strings {
   static final expAbout4 =
   '''An entity of Abu Dhabi leading real estate Businesses and a company.''';
   static final expAbout4_2 =
-  '''Leading 6 developers for creating Aqary Internationl Official app. ''';
+  '''Leading 25 developers for creating Aqary Internationl Official app. ''';
   static final expAbout4_3 =
   '''Aqary International application is the advance application for real estate businesses.''';
 

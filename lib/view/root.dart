@@ -216,7 +216,6 @@ class _RootScreenState extends ConsumerState<RootScreen> with SingleTickerProvid
       pointerSizeController.reverse();
   }
 
-
 class AnimatedPointer extends StatelessWidget {
   const AnimatedPointer({
     Key? key,

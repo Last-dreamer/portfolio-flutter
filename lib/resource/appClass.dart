@@ -14,7 +14,7 @@ class AppClass {
 
   /* URL */
   static final resumeDownloadURL =
-      '''https://drive.google.com/file/d/1AUj8qNucPEsacLZ92XNBr62F9Dh99Nq2/view?usp=share_link''';
+      '''https://drive.google.com/file/d/1EXvK6TP-QRIb883dhHw3i5XHOQMUt1sE/view?usp=sharing''';
  
   List<WorkModel> projectList = [
     WorkModel(
